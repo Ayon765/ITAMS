@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .print-only, .print-only * {
+    visibility: visible !important;
+  }
+  .print-only {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* Global Dark Mode Overrides */
+.dark {
+  color-scheme: dark;
+}
+
+/* Background & text colors */
+.dark,
+.dark body {
+  background-color: #0b0f19 !important; /* Elegant slate background */
+  color: #cbd5e1 !important;
+}
+
+/* Card backgrounds */
+.dark .bg-white,
+.dark .bg-slate-50\/40,
+.dark .bg-zinc-50\/40 {
+  background-color: #131c2e !important; /* Deep dark card background */
+}
+
+/* Text styles */
+.dark .text-black,
+.dark .text-slate-900,
+.dark .text-gray-900,
+.dark .text-zinc-900 {
+  color: #ffffff !important; /* Crisp white for headings and main text */
+}
+
+.dark .text-gray-800,
+.dark .text-slate-800,
+.dark .text-zinc-800 {
+  color: #f1f5f9 !important; /* Brighter white-gray for main emphasis body text */
+}
+
+.dark .text-gray-700,
+.dark .text-slate-700,
+.dark .text-zinc-700 {
+  color: #cbd5e1 !important; /* Soft gray for readable content */
+}
+
+.dark .text-gray-600,
+.dark .text-slate-600,
+.dark .text-zinc-600,
+.dark .text-zinc-500,
+.dark .text-slate-500,
+.dark .text-gray-500 {
+  color: #94a3b8 !important; /* Muted gray for subtitles/subtext */
+}
+
+/* Border styles */
+.dark .border-gray-100,
+.dark .border-gray-200,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-zinc-200,
+.dark .border-slate-200\/60 {
+  border-color: #1e293b !important; /* Subtle dark border lines */
+}
+
+/* Form controls (Inputs, Selects, Textareas) */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #090d16 !important;
+  border-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #475569 !important;
+}
+
+/* Interactive elements & hover effects */
+.dark .bg-gray-50,
+.dark .bg-slate-50,
+.dark .bg-zinc-50 {
+  background-color: #0e1525 !important;
+}
+
+.dark .hover\:bg-gray-50:hover,
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-zinc-50\/50:hover,
+.dark .hover\:bg-gray-50\/50:hover {
+  background-color: #1e293b !important;
+}
+
+/* Sub-headings, custom tables, adjustments */
+.dark td,
+.dark th {
+  border-color: #1e293b !important;
+}
+
+.dark .divide-gray-100 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #1e293b !important;
+}
+
+/* Global search container overlay compatibility */
+.dark .shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Buttons */
+.dark .bg-zinc-50 {
+  background-color: #1b253b !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .text-zinc-700 {
+  color: #cbd5e1 !important;
+}
+
+/* Make all tables across the website more compact and shorter */
+table th,
+table td {
+  padding-top: 0.35rem !important;    /* py-1.5 */
+  padding-bottom: 0.35rem !important; /* py-1.5 */
+  padding-left: 0.65rem !important;   /* px-2.5 */
+  padding-right: 0.65rem !important;  /* px-2.5 */
+  font-size: 0.75rem !important;      /* text-xs */
+}
+
+/* Ensure font size overrides on child elements inside td/th as well to keep things unified */
+table td *,
+table th * {
+  font-size: 0.75rem !important;
+}
+
+/* Let's specifically reduce svg/icon sizes inside table cells slightly if they are lucide icons */
+table td svg {
+  width: 0.875rem !important; /* 14px */
+  height: 0.875rem !important; /* 14px */
+}
+

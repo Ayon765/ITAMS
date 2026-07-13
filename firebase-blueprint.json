@@ -1,0 +1,56 @@
+{
+  "entities": {
+    "SystemState": {
+      "title": "SystemState",
+      "description": "Master inventory and IT asset management state document collecting records and employees information",
+      "type": "object",
+      "properties": {
+        "branches": {
+          "type": "array",
+          "description": "List of branches"
+        },
+        "employees": {
+          "type": "array",
+          "description": "List of employees information"
+        },
+        "products": {
+          "type": "array",
+          "description": "List of products records"
+        },
+        "purchases": {
+          "type": "array",
+          "description": "List of purchases records"
+        },
+        "deliveries": {
+          "type": "array",
+          "description": "List of inventory deliveries records"
+        },
+        "sells": {
+          "type": "array",
+          "description": "List of sell records"
+        }
+      }
+    },
+    "AppUsers": {
+      "title": "AppUsers",
+      "description": "Registered user accounts list collecting user email and password",
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "description": "Array of registered users with email and password"
+        }
+      }
+    }
+  },
+  "firestore": {
+    "/app_state/{docId}": {
+      "schema": "SystemState",
+      "description": "Store application state master data collecting records and employees information"
+    },
+    "/app_users/{docId}": {
+      "schema": "AppUsers",
+      "description": "Store registered user accounts collecting user email and password"
+    }
+  }
+}
